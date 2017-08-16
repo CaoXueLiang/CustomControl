@@ -23,5 +23,5 @@
 /** Parameters **/
 #define TB_SAFEAREA_PADDING 60
 @interface SliderControl : UIControl
-
+@property (nonatomic,assign) int angle;
 @end

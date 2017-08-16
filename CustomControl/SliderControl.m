@@ -10,7 +10,6 @@
 
 @interface SliderControl()
 @property (nonatomic,assign) int radius;
-@property (nonatomic,assign) int angle;
 @property (nonatomic,strong) UITextField *textField;
 @end
 
@@ -72,7 +71,6 @@
     
     //如果希望自己定制的控件与UIControl行为保持一致，那么当控件的值发生变化时，需要进行通知处理
     [self sendActionsForControlEvents:UIControlEventValueChanged];
-    
     return YES;
 }
 
@@ -135,7 +133,7 @@
     CGGradientRef gradient = CGGradientCreateWithColorComponents(baseSpace, components, NULL, 2);
     CGColorSpaceRelease(baseSpace),baseSpace = NULL;
     
-    //定义渐变的方
+    //定义渐变的方向
     CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
     CGPoint endPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect));
     
