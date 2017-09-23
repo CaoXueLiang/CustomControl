@@ -2,10 +2,12 @@
 自定义iOS的控件
 
 我们需要创建一个这样的控件能支持用户方便的选择0-360°之间的一个角度值，这就需要我们自定义控件了，如下图所示。实现方法是创建一个圆形的滑块，用户通过拖动手柄操作就能选择角度值。
+
 ![screen shot](http://upload-images.jianshu.io/upload_images/979175-635ef22f2d2394d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##绘制用户界面
 1.首先，是用一个`黑色的圆环`当做滑块的背景。 
+
 ![](http://upload-images.jianshu.io/upload_images/979175-ba21dcf197239a14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ```
     //创建路径
@@ -24,6 +26,7 @@
 ```
 2.弧形`图片遮罩`绘制。
      根据当前的角度绘制弧度。最后，利用`CGBitmapContextCreateImage`方法获取一张图片（刚刚绘制的弧）。这个图片就是我们所需要的掩码图了。
+     
 ![](http://upload-images.jianshu.io/upload_images/979175-ecffecd8dc776988.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ```
    /****绘制用户的可操作区域*******/
@@ -73,6 +76,7 @@
 ```
 5.绘制手柄
      根据当前的角度值，在的正确位置绘制出手柄，这里我们需要使用三角函数将一个标量值(scalar number)转换为`CGPoint`。然后根据中心点和半径绘制圆环手柄。
+     
 ![](http://upload-images.jianshu.io/upload_images/979175-604d4819c8bb1b99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ```
 /*获取当前手柄的中心点*/
@@ -155,5 +159,7 @@ SliderControl *slider = [[SliderControl alloc]initWithFrame:CGRectMake(0, 60, TB
 ```
 ##参考资料
 [如何自定义iOS中的控件](http://beyondvincent.com/2014/01/20/2014-01-20-how-to-build-a-custom-control-in-ios/)
+
 [How to build a custom control in iOS](http://www.thinkandbuild.it/how-to-build-a-custom-control-in-ios/)
+
 [Demo下载地址](https://github.com/CaoXueLiang/CustomControl)
