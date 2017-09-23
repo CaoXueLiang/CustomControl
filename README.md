@@ -107,7 +107,9 @@
 至此，已经完成了全部的绘制任务。
 
 ##跟踪用户的操作
+
 1.开始跟踪
+
 当在控件的bound内发生了一个触摸事件，首先会调用控件的`beginTrackingWithTouch`方法，该函数返回的BOOl值决定着：当触摸事件是`dragged`时，是否需要响应。
 ```
 -(BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event{
@@ -147,6 +149,7 @@
 }
 ```
 ##自定义控件的使用
+
 1.通过调用initWithFrame方法实例化了一个圆形滑块(自定义的控件)。
 ```
 SliderControl *slider = [[SliderControl alloc]initWithFrame:CGRectMake(0, 60, TB_SLIDER_SIZE, TB_SLIDER_SIZE)];
@@ -158,6 +161,7 @@ SliderControl *slider = [[SliderControl alloc]initWithFrame:CGRectMake(0, 60, TB
 [slider addTarget:self action:@selector(newValue:) forControlEvents:UIControlEventValueChanged];
 ```
 ##参考资料
+
 [如何自定义iOS中的控件](http://beyondvincent.com/2014/01/20/2014-01-20-how-to-build-a-custom-control-in-ios/)
 
 [How to build a custom control in iOS](http://www.thinkandbuild.it/how-to-build-a-custom-control-in-ios/)
