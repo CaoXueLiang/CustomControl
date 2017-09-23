@@ -25,7 +25,8 @@
     CGContextDrawPath(ctx, kCGPathStroke);
 ```
 2.弧形`图片遮罩`绘制。
-     根据当前的角度绘制弧度。最后，利用`CGBitmapContextCreateImage`方法获取一张图片（刚刚绘制的弧）。这个图片就是我们所需要的掩码图了。
+
+ 根据当前的角度绘制弧度。最后，利用`CGBitmapContextCreateImage`方法获取一张图片（刚刚绘制的弧）。这个图片就是我们所需要的掩码图了。
      
 ![](http://upload-images.jianshu.io/upload_images/979175-ecffecd8dc776988.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ```
@@ -48,7 +49,8 @@
     UIGraphicsEndImageContext();
 ```
 3.裁剪上下文。
-    现在我们已经有一个的掩码图了。接着利用函数`CGContextClipToMask`对上下文进行裁剪——给该函数传入上面刚刚创建好的掩码图。代码如下所示：
+
+现在我们已经有一个的掩码图了。接着利用函数`CGContextClipToMask`对上下文进行裁剪——给该函数传入上面刚刚创建好的掩码图。代码如下所示：
 ```
     /**裁剪上下文**/
     CGContextSaveGState(ctx);
@@ -75,7 +77,8 @@
     CGContextRestoreGState(ctx);
 ```
 5.绘制手柄
-     根据当前的角度值，在的正确位置绘制出手柄，这里我们需要使用三角函数将一个标量值(scalar number)转换为`CGPoint`。然后根据中心点和半径绘制圆环手柄。
+
+根据当前的角度值，在的正确位置绘制出手柄，这里我们需要使用三角函数将一个标量值(scalar number)转换为`CGPoint`。然后根据中心点和半径绘制圆环手柄。
      
 ![](http://upload-images.jianshu.io/upload_images/979175-604d4819c8bb1b99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ```
@@ -118,6 +121,7 @@
 }
 ```
 2.持续跟踪
+
 当用户进行drag时，会调`continueTrackingWithTouch`，通过该方法我们可以根据touch位置对用户的操作进行过滤。
 ```
 -(BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event{
